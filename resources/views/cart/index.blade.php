@@ -3,15 +3,15 @@
 @section('content')
 <div class="section">
 <div class="container">
-    <h1 class="section-title" style="margin-bottom:2rem;">🛒 Mon <span class="heading-accent">Panier</span></h1>
+    <h1 class="section-title" style="margin-bottom:2rem;">Mon <span class="heading-accent">Panier</span></h1>
 
     @if($cart->items->isEmpty())
     <div style="text-align:center;padding:5rem 0;">
-        <div style="font-size:5rem;margin-bottom:1rem;">🛒</div>
+        <div style="font-size:5rem;margin-bottom:1rem;"></div>
         <div style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Votre panier est vide</div>
         <p style="color:var(--text-muted);margin-bottom:2rem;">Ajoutez des voitures depuis le catalogue.</p>
         <a href="{{ route('voitures.index') }}" class="btn-primary" style="font-size:1rem;padding:0.75rem 2rem;">
-            🔍 Voir le catalogue
+            Voir le catalogue
         </a>
     </div>
     @else
@@ -55,7 +55,7 @@
 
         <form method="POST" action="{{ route('cart.vider') }}" onsubmit="return confirm('Vider le panier ?')">
             @csrf
-            <button type="submit" class="btn-danger" style="margin-top:0.5rem;">🗑️ Vider le panier</button>
+            <button type="submit" class="btn-danger" style="margin-top:0.5rem;">Vider le panier</button>
         </form>
     </div>
 

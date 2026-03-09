@@ -12,7 +12,7 @@
         <div>
             {{-- Client & Livraison --}}
             <div class="card" style="margin-bottom:1.5rem;">
-                <div style="font-weight:800; margin-bottom:1rem; font-size:1rem; border-bottom:1px solid var(--bg-border); padding-bottom:0.5rem;">👤 Infos Client</div>
+                <div style="font-weight:800; margin-bottom:1rem; font-size:1rem; border-bottom:1px solid var(--bg-border); padding-bottom:0.5rem;">Infos Client</div>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; font-size:0.92rem;">
                     <div>
                         <div style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase;">Nom</div>
@@ -37,7 +37,7 @@
 
             {{-- Articles --}}
             <div class="card">
-                <div style="font-weight:800; margin-bottom:1rem; font-size:1rem; border-bottom:1px solid var(--bg-border); padding-bottom:0.5rem;">🚗 Articles</div>
+                <div style="font-weight:800; margin-bottom:1rem; font-size:1rem; border-bottom:1px solid var(--bg-border); padding-bottom:0.5rem;">Articles</div>
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -73,7 +73,7 @@
 
             @if($order->notes)
             <div class="card" style="margin-top:1.5rem; border-left:4px solid var(--accent);">
-                <div style="font-weight:700; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">📝 Notes du client :</div>
+                <div style="font-weight:700; font-size:0.85rem; color:var(--text-muted); margin-bottom:0.4rem;">Notes du client :</div>
                 <p style="font-size:0.92rem; font-style:italic;">"{{ $order->notes }}"</p>
             </div>
             @endif
@@ -82,7 +82,7 @@
         {{-- Barre latérale: Statut --}}
         <div style="position:sticky; top:80px;">
             <div class="card">
-                <div style="font-weight:800; margin-bottom:1.5rem; font-size:1rem;">⚡ Action</div>
+                <div style="font-weight:800; margin-bottom:1.5rem; font-size:1rem;">Action</div>
                 <div style="margin-bottom:1.5rem;">
                     <div style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:0.5rem;">Statut actuel</div>
                     <span class="badge badge-{{ $order->statut_color }}" style="font-size:1rem; padding:0.5rem 1rem;">{{ $order->statut_label }}</span>
@@ -104,7 +104,7 @@
                 </form>
 
                 <p style="font-size:0.78rem; color:var(--text-muted); margin-top:2rem; line-height:1.6;">
-                    ℹ️ La modification du statut informe le système de l'avancement de la vente.
+                    La modification du statut informe le système de l'avancement de la vente.
                 </p>
             </div>
         </div>

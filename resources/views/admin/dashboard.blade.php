@@ -4,7 +4,7 @@
 <div class="section">
 <div class="container">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;">
-        <h1 class="section-title">⚙️ Dashboard <span class="heading-accent">Admin</span></h1>
+        <h1 class="section-title">Dashboard <span class="heading-accent">Admin</span></h1>
         <a href="{{ route('admin.voitures.create') }}" class="btn-primary">+ Ajouter une voiture</a>
     </div>
 
@@ -30,7 +30,7 @@
 
     {{-- Revenu --}}
     <div class="card" style="margin-bottom:2rem;border-color:rgba(232,160,0,0.15);background:linear-gradient(135deg,rgba(232,160,0,0.04),transparent);">
-        <div style="font-size:0.82rem;text-transform:uppercase;letter-spacing:0.4px;color:var(--text-muted);margin-bottom:0.4rem;">💰 Revenus confirmés</div>
+        <div style="font-size:0.82rem;text-transform:uppercase;letter-spacing:0.4px;color:var(--text-muted);margin-bottom:0.4rem;">Revenus confirmés</div>
         <div style="font-size:2.5rem;font-weight:900;color:var(--accent);">{{ number_format($stats['revenu'], 0, ',', ' ') }} Ar</div>
         <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem;">Commandes confirmées et livrées</div>
     </div>
@@ -38,10 +38,10 @@
     {{-- Nav rapide --}}
     <div class="grid-4" style="margin-bottom:2.5rem;">
         @foreach([
-            ['url' => route('admin.voitures'), 'icon' => '🚗', 'label' => 'Gérer les voitures'],
-            ['url' => route('admin.commandes'), 'icon' => '📦', 'label' => 'Gérer les commandes'],
-            ['url' => route('admin.categories'), 'icon' => '📂', 'label' => 'Catégories'],
-            ['url' => route('admin.marques'), 'icon' => '🏷️', 'label' => 'Marques'],
+            ['url' => route('admin.voitures'), 'icon' => '', 'label' => 'Gérer les voitures'],
+            ['url' => route('admin.commandes'), 'icon' => '', 'label' => 'Gérer les commandes'],
+            ['url' => route('admin.categories'), 'icon' => '', 'label' => 'Catégories'],
+            ['url' => route('admin.marques'), 'icon' => '', 'label' => 'Marques'],
         ] as $nav)
         <a href="{{ $nav['url'] }}" class="card" style="text-align:center;transition:all 0.2s;display:block;"
            onmouseover="this.style.borderColor='rgba(232,160,0,0.3)';this.style.transform='translateY(-2px)'"
@@ -55,7 +55,7 @@
     {{-- Dernières commandes --}}
     <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
-            <div style="font-weight:800;">📦 Dernières commandes</div>
+            <div style="font-weight:800;">Dernières commandes</div>
             <a href="{{ route('admin.commandes') }}" class="btn-outline btn-sm">Voir tout →</a>
         </div>
         @if($dernieres_commandes->isEmpty())

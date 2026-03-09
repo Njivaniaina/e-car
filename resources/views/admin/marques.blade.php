@@ -3,7 +3,7 @@
 @section('content')
 <div class="section">
 <div class="container">
-    <h1 class="section-title">🏷️ Gestion des <span class="heading-accent">Marques</span></h1>
+    <h1 class="section-title">Gestion des <span class="heading-accent">Marques</span></h1>
 
     <div style="display:grid; grid-template-columns:350px 1fr; gap:2.5rem; align-items:start;">
         <div class="card">
@@ -18,7 +18,7 @@
                     <label class="form-label">Pays d'origine</label>
                     <input type="text" name="pays_origine" class="form-control" placeholder="ex: Japon">
                 </div>
-                <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.8rem;">💾 Enregistrer</button>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.8rem;">Enregistrer</button>
             </form>
         </div>
 

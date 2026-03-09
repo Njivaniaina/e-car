@@ -3,13 +3,13 @@
 @section('content')
 <div class="section">
 <div class="container" style="max-width:900px;">
-    <h1 class="section-title" style="margin-bottom:2rem;">✅ Finaliser la <span class="heading-accent">commande</span></h1>
+    <h1 class="section-title" style="margin-bottom:2rem;">Finaliser la <span class="heading-accent">commande</span></h1>
 
     <div style="display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;">
 
     {{-- Formulaire --}}
     <div class="card">
-        <div style="font-weight:800;margin-bottom:1.5rem;font-size:1rem;">👤 Vos informations</div>
+        <div style="font-weight:800;margin-bottom:1.5rem;font-size:1rem;">Vos informations</div>
         <form method="POST" action="{{ route('orders.store') }}">
             @csrf
             <div class="form-group">
@@ -41,7 +41,7 @@
                           placeholder="Instructions spéciales, heure de disponibilité…">{{ old('notes') }}</textarea>
             </div>
             <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:0.9rem;font-size:1rem;">
-                ✅ Confirmer la commande
+                Confirmer la commande
             </button>
         </form>
     </div>
@@ -49,7 +49,7 @@
     {{-- Récapitulatif --}}
     <div style="position:sticky;top:80px;">
         <div class="card">
-            <div style="font-weight:800;margin-bottom:1.25rem;font-size:1rem;">🛒 Récapitulatif</div>
+            <div style="font-weight:800;margin-bottom:1.25rem;font-size:1rem;">Récapitulatif</div>
             @foreach($cart->items as $item)
             <div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid var(--bg-border);">
                 <div>
@@ -64,7 +64,7 @@
                 <span style="font-size:1.4rem;font-weight:900;color:var(--accent);">{{ $cart->total_formatte }}</span>
             </div>
             <div style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);line-height:1.7;">
-                📞 Un conseiller vous contactera après votre commande pour finaliser la transaction.
+                Un conseiller vous contactera après votre commande pour finaliser la transaction.
             </div>
         </div>
     </div>

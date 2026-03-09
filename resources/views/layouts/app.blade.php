@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@yield('title', 'E-Mobile') — Vente de Voitures à Madagascar</title>
+    <title>@yield('title', 'e-car') — Vente de Voitures à Madagascar</title>
     <meta name="description" content="@yield('description', 'Trouvez votre voiture idéale en Ariary. Large choix de berlines, SUV, pickups, citadines neuves et d\'occasion.')"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
         /* NAV */
         .navbar { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--bg-border); padding: 0 1.5rem; }
         .nav-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; height: 64px; }
-        .nav-logo { font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent-lt)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; white-space: nowrap; }
+        .nav-logo { font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent-lt)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; white-space: nowrap; text-transform: uppercase; }
         .nav-logo span { -webkit-text-fill-color: var(--text-white); }
         .nav-links { display: flex; gap: 0.25rem; margin-left: 1rem; flex: 1; }
         .nav-links a { padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
@@ -139,13 +139,13 @@
 
 <nav class="navbar">
     <div class="nav-inner">
-        <a href="{{ route('home') }}" class="nav-logo">E<span>-Mobile</span></a>
+        <a href="{{ route('home') }}" class="nav-logo">e<span>-car</span></a>
         <div class="nav-links">
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a>
             <a href="{{ route('voitures.index') }}" class="{{ request()->routeIs('voitures.*') ? 'active' : '' }}">Voitures</a>
             @auth
             <a href="{{ route('orders.historique') }}" class="{{ request()->routeIs('orders.historique') ? 'active' : '' }}">Mes commandes</a>
-            <a href="{{ route('admin.dashboard') }}" style="color:var(--accent)">⚙️ Admin</a>
+            <a href="{{ route('admin.dashboard') }}" style="color:var(--accent)">Admin Panel</a>
             @endauth
         </div>
         <div class="nav-actions">
@@ -154,7 +154,7 @@
                 $cartCount = $cartController->nombreItems();
             @endphp
             <a href="{{ route('cart.index') }}" class="cart-btn">
-                🛒 Panier
+                Panier
                 @if($cartCount > 0)<span class="cart-badge">{{ $cartCount }}</span>@endif
             </a>
             @auth
@@ -186,7 +186,7 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <div class="footer-logo-txt">E-Mobile</div>
+                <div class="footer-logo-txt">e-car</div>
                 <p class="footer-desc">La première plateforme de vente de voitures à Madagascar. Voitures neuves et d'occasion, prix en Ariary.</p>
             </div>
             <div>
@@ -201,13 +201,13 @@
             <div>
                 <div class="footer-title">Contact</div>
                 <ul class="footer-links">
-                    <li><a href="#">📞 +261 34 00 000 00</a></li>
-                    <li><a href="#">✉️ contact@e-mobile.mg</a></li>
-                    <li><a href="#">📍 Antananarivo, Madagascar</a></li>
+                    <li><a href="#">+261 34 00 000 00</a></li>
+                    <li><a href="#">contact@e-mobile.mg</a></li>
+                    <li><a href="#">Antananarivo, Madagascar</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">&copy; {{ date('Y') }} E-Mobile Madagascar — Prix en Ariary (Ar)</div>
+        <div class="footer-bottom">&copy; {{ date('Y') }} e-car Madagascar — Prix en Ariary (Ar)</div>
     </div>
 </footer>
 @stack('scripts')

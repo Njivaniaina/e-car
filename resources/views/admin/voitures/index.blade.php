@@ -4,7 +4,7 @@
 <div class="section">
 <div class="container">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;">
-        <h1 class="section-title">🚗 Gestion des <span class="heading-accent">Voitures</span></h1>
+        <h1 class="section-title">Gestion des <span class="heading-accent">Voitures</span></h1>
         <a href="{{ route('admin.voitures.create') }}" class="btn-primary">+ Ajouter</a>
     </div>
 
@@ -37,17 +37,17 @@
                         <span class="badge badge-danger">Inactif</span>
                         @endif
                         @if($v->is_featured)
-                        <span class="badge badge-warning" style="margin-left:0.3rem;">⭐ Vedette</span>
+                        <span class="badge badge-warning" style="margin-left:0.3rem;">Vedette</span>
                         @endif
                     </td>
                     <td>
                         <div style="display:flex;gap:0.5rem;">
-                            <a href="{{ route('voitures.show', $v->slug) }}" class="btn-outline btn-sm">👁️</a>
-                            <a href="{{ route('admin.voitures.edit', $v) }}" class="btn-outline btn-sm">✏️</a>
+                            <a href="{{ route('voitures.show', $v->slug) }}" class="btn-outline btn-sm">Voir</a>
+                            <a href="{{ route('admin.voitures.edit', $v) }}" class="btn-outline btn-sm">Editer</a>
                             <form method="POST" action="{{ route('admin.voitures.destroy', $v) }}"
                                   onsubmit="return confirm('Supprimer cette voiture ?')">
                                 @csrf @method('DELETE')
-                                <button type="submit" class="btn-danger btn-sm">🗑️</button>
+                                <button type="submit" class="btn-danger btn-sm">Supprimer</button>
                             </form>
                         </div>
                     </td>

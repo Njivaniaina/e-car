@@ -114,7 +114,7 @@
 
         <div style="padding-top:1rem; border-top:1px solid var(--bg-border);">
             <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.9rem; font-size:1rem;">
-                💾 Enregistrer la voiture
+                Enregistrer la voiture
             </button>
         </div>
     </form>

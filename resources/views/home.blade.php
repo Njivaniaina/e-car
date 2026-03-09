@@ -8,11 +8,11 @@
 {{-- ── HERO ── --}}
 <section style="background: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #0f0a00 100%); padding: 6rem 0 5rem; position:relative; overflow:hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 50%, rgba(232,160,0,0.08), transparent);pointer-events:none"></div>
-    <div style="position:absolute;top:20%;right:5%;font-size:12rem;opacity:0.04;pointer-events:none;line-height:1">🚗</div>
+    <div style="position:absolute;top:20%;right:5%;font-size:12rem;opacity:0.04;pointer-events:none;line-height:1"></div>
     <div class="container" style="position:relative">
         <div style="max-width:640px">
             <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(232,160,0,0.1);border:1px solid rgba(232,160,0,0.2);border-radius:50px;padding:0.35rem 1rem;font-size:0.82rem;font-weight:600;color:var(--accent);margin-bottom:1.5rem;">
-                🇲🇬 N°1 à Madagascar
+                N°1 à Madagascar
             </div>
             <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem;">
                 Trouvez votre<br><span style="color:var(--accent)">voiture idéale</span><br>en Ariary
@@ -22,10 +22,10 @@
             </p>
             <div style="display:flex;gap:1rem;flex-wrap:wrap;">
                 <a href="{{ route('voitures.index') }}" class="btn-primary" style="font-size:1rem;padding:0.75rem 2rem;">
-                    🔍 Voir toutes les voitures
+                    Voir toutes les voitures
                 </a>
                 <a href="{{ route('voitures.index') }}?etat=neuf" class="btn-outline" style="font-size:1rem;padding:0.75rem 1.5rem;">
-                    ✨ Voitures neuves
+                    Voitures neuves
                 </a>
             </div>
         </div>
@@ -63,7 +63,7 @@
                style="background:var(--bg-card);border:1px solid var(--bg-border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;transition:all 0.3s;display:block;"
                onmouseover="this.style.borderColor='rgba(232,160,0,0.4)';this.style.transform='translateY(-3px)'"
                onmouseout="this.style.borderColor='var(--bg-border)';this.style.transform=''">
-                <div style="font-size:2.5rem;margin-bottom:0.6rem;">{{ $cat->icone ?? '🚗' }}</div>
+                <div style="font-size:2.5rem;margin-bottom:0.6rem;"></div>
                 <div style="font-weight:700;font-size:0.95rem;">{{ $cat->nom }}</div>
                 <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">{{ $cat->voitures_count }} véhicule{{ $cat->voitures_count > 1 ? 's' : '' }}</div>
             </a>
@@ -115,7 +115,7 @@
 {{-- ── CTA ── --}}
 <section style="background:linear-gradient(135deg,rgba(232,160,0,0.08),rgba(232,160,0,0.02));border-top:1px solid var(--bg-border);padding:5rem 0;text-align:center;">
     <div class="container">
-        <div style="font-size:3rem;margin-bottom:1rem;">🚀</div>
+        <div style="font-size:3rem;margin-bottom:1rem;"></div>
         <h2 style="font-size:2rem;font-weight:900;margin-bottom:0.75rem;">Prêt à trouver votre voiture ?</h2>
         <p style="font-size:1rem;color:var(--text-muted);margin-bottom:2rem;max-width:450px;margin-left:auto;margin-right:auto;">
             Parcourez notre catalogue complet avec filtres avancés par prix, marque, catégorie et plus encore.

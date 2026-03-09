@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "nji/e-car",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "E-Commerce de vente de voitures à Madagascar.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {

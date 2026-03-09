@@ -37,8 +37,8 @@
     </div>
 
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="{{ route('home') }}" class="btn-primary">🏠 Retour à l'accueil</a>
-        <a href="{{ route('voitures.index') }}" class="btn-outline">🚗 Voir d'autres voitures</a>
+        <a href="{{ route('home') }}" class="btn-primary">Retour à l'accueil</a>
+        <a href="{{ route('voitures.index') }}" class="btn-outline">Voir d'autres voitures</a>
     </div>
 </div>
 </div>

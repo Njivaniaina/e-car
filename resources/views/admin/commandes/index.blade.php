@@ -3,7 +3,7 @@
 @section('content')
 <div class="section">
 <div class="container">
-    <h1 class="section-title">📦 Gestion des <span class="heading-accent">Commandes</span></h1>
+    <h1 class="section-title">Gestion des <span class="heading-accent">Commandes</span></h1>
     <p class="section-subtitle">{{ $commandes->total() }} commande(s) au total</p>
 
     <div class="card">

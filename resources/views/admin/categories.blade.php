@@ -3,11 +3,11 @@
 @section('content')
 <div class="section">
 <div class="container">
-    <h1 class="section-title">📂 Gestion des <span class="heading-accent">Catégories</span></h1>
+    <h1 class="section-title">Gestion des <span class="heading-accent">Catégories</span></h1>
 
     <div style="display:grid; grid-template-columns:350px 1fr; gap:2.5rem; align-items:start;">
         <div class="card">
-            <div style="font-weight:800; margin-bottom:1.5rem; font-size:1rem;">➕ Ajouter une catégorie</div>
+            <div style="font-weight:800; margin-bottom:1.5rem; font-size:1rem;">Ajouter une catégorie</div>
             <form method="POST" action="{{ route('admin.categories.store') }}">
                 @csrf
                 <div class="form-group">
@@ -15,10 +15,10 @@
                     <input type="text" name="nom" class="form-control" required placeholder="ex: Camion">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Icône (Emoji)</label>
-                    <input type="text" name="icone" class="form-control" placeholder="ex: 🚚">
+                    <label class="form-label">Icône (optionnel)</label>
+                    <input type="text" name="icone" class="form-control" placeholder="ex: icon-car">
                 </div>
-                <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.8rem;">💾 Enregistrer</button>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.8rem;">Enregistrer</button>
             </form>
         </div>
 

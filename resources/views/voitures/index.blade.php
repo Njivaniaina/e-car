@@ -19,7 +19,7 @@
 <aside>
     <form method="GET" action="{{ route('voitures.index') }}">
         <div class="card" style="position:sticky;top:80px;">
-            <div style="font-weight:800;font-size:1rem;margin-bottom:1.25rem;">🔧 Filtres</div>
+            <div style="font-weight:800;font-size:1rem;margin-bottom:1.25rem;">Filtres</div>
 
             @if(request()->hasAny(['category','marque','etat','carburant','prix_min','prix_max','q']))
             <a href="{{ route('voitures.index') }}" class="btn-outline btn-sm" style="display:block;text-align:center;margin-bottom:1.25rem;color:var(--danger);border-color:rgba(239,68,68,0.3);">
@@ -65,7 +65,7 @@
                 <select name="etat" class="form-control">
                     <option value="">Tous</option>
                     <option value="neuf" {{ request('etat') === 'neuf' ? 'selected' : '' }}>✨ Neuf</option>
-                    <option value="occasion" {{ request('etat') === 'occasion' ? 'selected' : '' }}>🔄 Occasion</option>
+                    <option value="occasion" {{ request('etat') === 'occasion' ? 'selected' : '' }}>Occasion</option>
                 </select>
             </div>
 
@@ -74,10 +74,10 @@
                 <label class="form-label">Carburant</label>
                 <select name="carburant" class="form-control">
                     <option value="">Tous</option>
-                    <option value="essence"     {{ request('carburant') === 'essence'     ? 'selected' : '' }}>⛽ Essence</option>
-                    <option value="diesel"      {{ request('carburant') === 'diesel'      ? 'selected' : '' }}>🛢️ Diesel</option>
-                    <option value="electrique"  {{ request('carburant') === 'electrique'  ? 'selected' : '' }}>⚡ Électrique</option>
-                    <option value="hybride"     {{ request('carburant') === 'hybride'     ? 'selected' : '' }}>🌿 Hybride</option>
+                    <option value="essence"     {{ request('carburant') === 'essence'     ? 'selected' : '' }}>Essence</option>
+                    <option value="diesel"      {{ request('carburant') === 'diesel'      ? 'selected' : '' }}>Diesel</option>
+                    <option value="electrique"  {{ request('carburant') === 'electrique'  ? 'selected' : '' }}>Électrique</option>
+                    <option value="hybride"     {{ request('carburant') === 'hybride'     ? 'selected' : '' }}>Hybride</option>
                 </select>
             </div>
 
@@ -111,7 +111,7 @@
 <div>
     @if($voitures->isEmpty())
     <div style="text-align:center;padding:4rem 0;">
-        <div style="font-size:4rem;margin-bottom:1rem;">🚫</div>
+        <div style="font-size:4rem;margin-bottom:1rem;"></div>
         <div style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Aucun résultat</div>
         <p style="color:var(--text-muted);">Essayez d'autres filtres.</p>
         <a href="{{ route('voitures.index') }}" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;">Réinitialiser</a>

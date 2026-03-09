@@ -3,15 +3,15 @@
 @section('content')
 <div class="section">
 <div class="container" style="max-width:980px;">
-    <h1 class="section-title">📋 Mon <span class="heading-accent">Historique</span></h1>
+    <h1 class="section-title">Mon <span class="heading-accent">Historique</span></h1>
     <p class="section-subtitle">Retrouvez toutes vos commandes passées sur E-Mobile.</p>
 
     @if($orders->isEmpty())
     <div class="card" style="text-align:center; padding:4rem 0;">
-        <div style="font-size:4rem; margin-bottom:1rem;">📋</div>
+        <div style="font-weight:800;margin-bottom:1.5rem;font-size:1rem;">Vos informations</div>
         <div style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem;">Aucune commande trouvée</div>
         <p style="color:var(--text-muted); margin-bottom:2rem;">Vous n'avez pas encore passé de commande.</p>
-        <a href="{{ route('voitures.index') }}" class="btn-primary">🔍 Voir le catalogue</a>
+        <a href="{{ route('voitures.index') }}" class="btn-primary">Voir le catalogue</a>
     </div>
     @else
     @foreach($orders as $order)
