@@ -14,17 +14,17 @@
             <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(232,160,0,0.1);border:1px solid rgba(232,160,0,0.2);border-radius:50px;padding:0.35rem 1rem;font-size:0.82rem;font-weight:600;color:var(--accent);margin-bottom:1.5rem;">
                 N°1 à Madagascar
             </div>
-            <h1 style="font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem;">
+            <h1 style="font-size:clamp(1.8rem,8vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem;">
                 Trouvez votre<br><span style="color:var(--accent)">voiture idéale</span><br>en Ariary
             </h1>
             <p style="font-size:1.05rem;color:var(--text-muted);margin-bottom:2.5rem;max-width:480px;line-height:1.75;">
                 {{ $stats['voitures'] }} voitures disponibles — neuves et d'occasion — {{ $stats['categories'] }} catégories, {{ $stats['marques'] }} marques.
             </p>
-            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-                <a href="{{ route('voitures.index') }}" class="btn-primary" style="font-size:1rem;padding:0.75rem 2rem;">
-                    Voir toutes les voitures
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                <a href="{{ route('voitures.index') }}" class="btn-primary" style="flex:1;min-width:200px;justify-content:center;padding:0.75rem 1rem;">
+                    Catalogue complet
                 </a>
-                <a href="{{ route('voitures.index') }}?etat=neuf" class="btn-outline" style="font-size:1rem;padding:0.75rem 1.5rem;">
+                <a href="{{ route('voitures.index') }}?etat=neuf" class="btn-outline" style="flex:1;min-width:200px;justify-content:center;padding:0.75rem 1rem;">
                     Voitures neuves
                 </a>
             </div>
@@ -57,15 +57,14 @@
     <div class="container">
         <h2 class="section-title">Parcourir par <span class="heading-accent">catégorie</span></h2>
         <p class="section-subtitle">Trouvez le véhicule qui correspond à vos besoins</p>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));gap:0.75rem;">
             @foreach($categories as $cat)
             <a href="{{ route('voitures.index') }}?category={{ $cat->slug }}"
-               style="background:var(--bg-card);border:1px solid var(--bg-border);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;transition:all 0.3s;display:block;"
+               style="background:var(--bg-card);border:1px solid var(--bg-border);border-radius:var(--radius);padding:1rem 0.5rem;text-align:center;transition:all 0.3s;display:block;"
                onmouseover="this.style.borderColor='rgba(232,160,0,0.4)';this.style.transform='translateY(-3px)'"
                onmouseout="this.style.borderColor='var(--bg-border)';this.style.transform=''">
-                <div style="font-size:2.5rem;margin-bottom:0.6rem;"></div>
-                <div style="font-weight:700;font-size:0.95rem;">{{ $cat->nom }}</div>
-                <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem;">{{ $cat->voitures_count }} véhicule{{ $cat->voitures_count > 1 ? 's' : '' }}</div>
+                <div style="font-weight:700;font-size:0.85rem;">{{ $cat->nom }}</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.1rem;">{{ $cat->voitures_count }} véhicule{{ $cat->voitures_count > 1 ? 's' : '' }}</div>
             </a>
             @endforeach
         </div>

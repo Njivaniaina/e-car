@@ -16,7 +16,7 @@
     @else
     @foreach($orders as $order)
     <div class="card" style="margin-bottom:1.5rem; border-left:4px solid var(--accent);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
+        <div class="order-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem;">
             <div>
                 <div style="font-size:0.72rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Référence</div>
                 <div style="font-weight:800; font-family:monospace; color:var(--accent); font-size:1.15rem;">{{ $order->reference }}</div>
@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:2fr 1fr; gap:2rem; padding:1.25rem; background:rgba(255,255,255,0.02); border-radius:10px;">
+        <div class="order-grid">
             <div>
                 <div style="margin-bottom:0.75rem; font-weight:700; font-size:0.85rem; color:var(--text-muted);">Articles :</div>
                 @foreach($order->items as $item)
@@ -37,14 +37,14 @@
                 </div>
                 @endforeach
             </div>
-            <div style="text-align:right; border-left:1px solid var(--bg-border); padding-left:1.5rem;">
+            <div class="order-total-box" style="text-align:right; border-left:1px solid var(--bg-border); padding-left:1.5rem;">
                 <div style="color:var(--text-muted); font-size:0.75rem; margin-bottom:0.2rem;">TOTAL RÉGLÉ</div>
                 <div style="font-size:1.5rem; font-weight:900; color:var(--accent);">{{ $order->total_formatte }}</div>
                 <div style="color:var(--text-muted); font-size:0.82rem; margin-top:0.5rem;">Le {{ $order->created_at->format('d/m/Y') }}</div>
             </div>
         </div>
 
-        <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center;">
+        <div class="order-footer" style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center;">
             <div style="font-size:0.82rem; color:var(--text-muted);">
                 📞 Téléphone de contact : <span style="color:var(--text-white); font-weight:600;">{{ $order->telephone }}</span>
             </div>
@@ -59,4 +59,14 @@
     @endif
 </div>
 </div>
+
+<style>
+    .order-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 10px; }
+    @media(max-width: 768px) {
+        .order-grid { grid-template-columns: 1fr; gap: 1rem; }
+        .order-header { flex-direction: column; align-items: flex-start !important; gap: 1rem; }
+        .order-footer { flex-direction: column; align-items: flex-start !important; gap: 1rem; }
+        .order-total-box { text-align: left !important; border-left: none !important; padding-left: 0 !important; border-top: 1px solid var(--bg-border); padding-top: 1rem; }
+    }
+</style>
 @endsection

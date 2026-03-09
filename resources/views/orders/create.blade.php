@@ -5,7 +5,7 @@
 <div class="container" style="max-width:900px;">
     <h1 class="section-title" style="margin-bottom:2rem;">Finaliser la <span class="heading-accent">commande</span></h1>
 
-    <div style="display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;">
+    <div class="checkout-grid">
 
     {{-- Formulaire --}}
     <div class="card">
@@ -72,4 +72,12 @@
     </div>
 </div>
 </div>
+
+<style>
+    .checkout-grid { display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start; }
+    @media(max-width: 900px) {
+        .checkout-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .checkout-grid > div:last-child { position: static !important; order: -1; }
+    }
+</style>
 @endsection

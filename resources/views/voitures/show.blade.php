@@ -16,15 +16,15 @@
     <span style="color:var(--text-white)">{{ $voiture->titre }}</span>
 </div>
 
-<div style="display:grid;grid-template-columns:1fr 380px;gap:2.5rem;align-items:start;">
+<div class="show-grid">
 
 {{-- ── GAUCHE: Image + Specs ── --}}
 <div>
     {{-- Image principale --}}
     <div style="background:var(--bg-card);border:1px solid var(--bg-border);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;">
         @if($voiture->images && count($voiture->images) > 0)
-            <img src="{{ asset('storage/' . $voiture->images[0]) }}" alt="{{ $voiture->titre }}"
-                 style="width:100%;height:420px;object-fit:cover;">
+            <img src="{{ asset('storage/' . $voiture->images[0]) }}" alt="{{ $voiture->titre }}" class="main-img"
+                 style="width:100%;height:clamp(250px, 40vh, 420px);object-fit:cover;">
             @if(count($voiture->images) > 1)
             <div style="display:flex;gap:0.5rem;padding:0.75rem;overflow-x:auto;">
                 @foreach($voiture->images as $img)
@@ -77,42 +77,17 @@
     </div>
 </div>
 
-{{-- ── DROITE: Achat ── --}}
-<div style="position:sticky;top:80px;">
-    <div class="card" style="margin-bottom:1.25rem;">
-        {{-- Badges --}}
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
-            <span class="badge badge-{{ $voiture->etat }}">{{ $voiture->etat === 'neuf' ? 'Neuf' : 'Occasion' }}</span>
-            <span class="badge badge-cat">{{ $voiture->category->icone }} {{ $voiture->category->nom }}</span>
-        </div>
-
-        <h1 style="font-size:1.3rem;font-weight:900;margin-bottom:0.5rem;line-height:1.3;">{{ $voiture->titre }}</h1>
-        <div style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.25rem;">{{ $voiture->marque->nom }} — {{ $voiture->annee }}</div>
-
-        <div style="font-size:2rem;font-weight:900;color:var(--accent);margin-bottom:0.3rem;">{{ $voiture->prix_formatte }}</div>
-        <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:1.5rem;">Prix en Ariary malgache (Ar)</div>
-
-        <form method="POST" action="{{ route('cart.ajouter') }}">
-            @csrf
-            <input type="hidden" name="voiture_id" value="{{ $voiture->id }}">
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:0.9rem;font-size:1rem;margin-bottom:0.75rem;">
-                Ajouter au panier
-            </button>
-        </form>
-
-        <a href="{{ route('cart.index') }}" class="btn-outline" style="width:100%;justify-content:center;padding:0.75rem;display:flex;">
-            Voir le panier
-        </a>
-
-        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--bg-border);">
-            <div style="font-size:0.82rem;color:var(--text-muted);display:flex;flex-direction:column;gap:0.5rem;">
-                <span>Annonce vérifiée</span>
-                <span>Contactez-nous : +261 34 00 000 00</span>
-                <span>Réf : #VOI-{{ str_pad($voiture->id, 4, '0', STR_PAD_LEFT) }}</span>
-            </div>
         </div>
     </div>
 </div>
+
+<style>
+    .show-grid { display: grid; grid-template-columns: 1fr 380px; gap: 2.5rem; align-items: start; }
+    @media(max-width: 950px) {
+        .show-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .sidebar-wrap { position: static !important; }
+    }
+</style>
 
 </div>{{-- /grid --}}
 

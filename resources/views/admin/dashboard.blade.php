@@ -61,28 +61,30 @@
         @if($dernieres_commandes->isEmpty())
         <p style="color:var(--text-muted);text-align:center;padding:1.5rem 0;">Aucune commande pour l'instant.</p>
         @else
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Référence</th>
-                    <th>Client</th>
-                    <th>Total</th>
-                    <th>Statut</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($dernieres_commandes as $cmd)
-                <tr>
-                    <td><a href="{{ route('admin.commandes.show', $cmd) }}" style="color:var(--accent);font-family:monospace;font-size:0.82rem;">{{ $cmd->reference }}</a></td>
-                    <td>{{ $cmd->nom_client }}</td>
-                    <td style="font-weight:700;color:var(--accent)">{{ $cmd->total_formatte }}</td>
-                    <td><span class="badge badge-{{ $cmd->statut_color }}">{{ $cmd->statut_label }}</span></td>
-                    <td style="color:var(--text-muted);font-size:0.8rem;">{{ $cmd->created_at->format('d/m/Y') }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>Client</th>
+                        <th>Total</th>
+                        <th>Statut</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($dernieres_commandes as $cmd)
+                    <tr>
+                        <td><a href="{{ route('admin.commandes.show', $cmd) }}" style="color:var(--accent);font-family:monospace;font-size:0.82rem;">{{ $cmd->reference }}</a></td>
+                        <td>{{ $cmd->nom_client }}</td>
+                        <td style="font-weight:700;color:var(--accent)">{{ $cmd->total_formatte }}</td>
+                        <td><span class="badge badge-{{ $cmd->statut_color }}">{{ $cmd->statut_label }}</span></td>
+                        <td style="color:var(--text-muted);font-size:0.8rem;">{{ $cmd->created_at->format('d/m/Y') }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         @endif
     </div>
 </div>

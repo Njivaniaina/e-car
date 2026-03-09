@@ -35,9 +35,47 @@
         .nav-logo { font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent-lt)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px; white-space: nowrap; text-transform: uppercase; }
         .nav-logo span { -webkit-text-fill-color: var(--text-white); }
         .nav-links { display: flex; gap: 0.25rem; margin-left: 1rem; flex: 1; }
-        .nav-links a { padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-white); background: var(--bg-border); }
+        .nav-links a { padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: all 0.2s; display: flex; align-items: center; }
+        .nav-links a:hover { color: var(--text-white); background: var(--bg-border); }
+        .nav-links a.active { color: var(--accent); background: rgba(232,160,0,0.1); border: 1px solid rgba(232,160,0,0.2); }
         .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+        /* MOBILE MENU TOGGLE */
+        .menu-toggle { display: none; background: none; border: none; color: var(--text-white); cursor: pointer; padding: 0.5rem; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: currentColor; margin: 5px 0; transition: 0.3s; }
+
+        @media(max-width:850px) {
+            .menu-toggle { display: block; }
+            .nav-links { 
+                position: fixed; top: 62px; left: 0; right: 0; height: calc(100vh - 62px);
+                background-color: #0a0a0f !important; 
+                background: #0a0a0f !important;
+                flex-direction: column; padding: 2rem; gap: 0.5rem; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                display: flex; margin: 0; z-index: 9999 !important;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+                backdrop-filter: none !important; 
+                overflow-y: auto; /* Enable scrolling if too many links */
+                padding-bottom: 4rem; /* Extra space at the bottom */
+            }
+            .nav-links.active { transform: translateX(0); }
+            .nav-links a { 
+                font-size: 1.1rem; 
+                padding: 1rem 1.5rem; 
+                margin-bottom: 0.5rem;
+                background: rgba(255,255,255,0.03);
+                border: 1px solid var(--bg-border);
+                width: 100%; 
+                border-radius: 12px !important; 
+            }
+            .nav-links a.active { 
+                background: var(--accent) !important; 
+                color: #000 !important; 
+                border: none !important;
+                font-weight: 800;
+            }
+            .nav-actions { gap: 0.5rem; }
+            .btn-outline, .btn-primary { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+        }
 
         /* BUTTONS */
         .btn-primary { padding: 0.5rem 1.1rem; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-lt)); color: #000; font-weight: 700; font-size: 0.88rem; transition: all 0.2s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; }
@@ -53,6 +91,15 @@
         .cart-btn:hover { background: var(--accent); color: #000; }
         .cart-badge { position: absolute; top: -6px; right: -6px; background: var(--accent); color: #000; font-size: 0.68rem; font-weight: 900; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
+        .auth-mobile { display: none; margin-top: 1.5rem; border-top: 1px solid var(--bg-border); padding-top: 1.5rem; }
+        @media(max-width:850px) {
+            .auth-desktop { display: none; }
+            .auth-mobile { display: block; }
+            .cart-text { display: none; }
+            .cart-btn { padding: 0.5rem; width: 40px; height: 40px; justify-content: center; }
+            .cart-btn::before { content: '🛒'; } /* Fallback simple pour l'icône */
+        }
+
         /* LAYOUT */
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
         .section { padding: 4rem 0; }
@@ -67,8 +114,15 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
         @media(max-width:1024px){ .grid-4{grid-template-columns:repeat(3,1fr);} .grid-3{grid-template-columns:repeat(2,1fr);} }
-        @media(max-width:768px){ .grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr;} .nav-links{display:none;} }
-        @media(max-width:560px){ .grid-4,.grid-3,.grid-2{grid-template-columns:1fr;} }
+        @media(max-width:768px){ 
+            .grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr;} 
+            .section { padding: 3rem 0; }
+            .section-title { font-size: 1.5rem; }
+        }
+        @media(max-width:560px){ 
+            .grid-4,.grid-3,.grid-2{grid-template-columns:1fr;} 
+            .container { padding: 0 1rem; }
+        }
 
         /* CAR CARDS */
         .car-card { background: var(--bg-card); border: 1px solid var(--bg-border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
@@ -110,6 +164,10 @@
         .data-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(30,30,46,0.5); font-size: 0.88rem; vertical-align: middle; }
         .data-table tr:hover td { background: rgba(255,255,255,0.015); }
 
+        /* RESPONSIVE TABLE WRAPPER */
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; border-radius: 8px; border: 1px solid var(--bg-border); }
+        .table-responsive .data-table { margin-bottom: 0; border: none; }
+
         /* PAGINATION */
         .pagination-wrap { display: flex; justify-content: center; gap: 0.4rem; margin-top: 2.5rem; flex-wrap: wrap; }
         .page-item { padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; background: var(--bg-card); border: 1px solid var(--bg-border); color: var(--text-muted); transition: all 0.2s; cursor: pointer; }
@@ -139,13 +197,26 @@
 
 <nav class="navbar">
     <div class="nav-inner">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
         <a href="{{ route('home') }}" class="nav-logo">e<span>-car</span></a>
         <div class="nav-links">
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Accueil</a>
             <a href="{{ route('voitures.index') }}" class="{{ request()->routeIs('voitures.*') ? 'active' : '' }}">Voitures</a>
             @auth
             <a href="{{ route('orders.historique') }}" class="{{ request()->routeIs('orders.historique') ? 'active' : '' }}">Mes commandes</a>
-            <a href="{{ route('admin.dashboard') }}" style="color:var(--accent)">Admin Panel</a>
+            <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.*') ? 'active' : '' }}" style="color:var(--accent)">Admin Panel</a>
+            <div class="auth-mobile">
+                <form method="POST" action="{{ route('logout') }}" style="width:100%">@csrf
+                    <button type="submit" class="btn-outline" style="width:100%;justify-content:center;">Déconnexion</button>
+                </form>
+            </div>
+            @else
+            <div class="auth-mobile">
+                <a href="{{ route('login') }}" class="btn-outline" style="width:100%;justify-content:center;margin-bottom:0.5rem;">Connexion</a>
+                <a href="{{ route('register') }}" class="btn-primary" style="width:100%;justify-content:center;">S'inscrire</a>
+            </div>
             @endauth
         </div>
         <div class="nav-actions">
@@ -153,18 +224,20 @@
                 $cartController = new \App\Http\Controllers\CartController();
                 $cartCount = $cartController->nombreItems();
             @endphp
-            <a href="{{ route('cart.index') }}" class="cart-btn">
-                Panier
+            <a href="{{ route('cart.index') }}" class="cart-btn" title="Panier">
+                <span class="cart-text">Panier</span>
                 @if($cartCount > 0)<span class="cart-badge">{{ $cartCount }}</span>@endif
             </a>
-            @auth
-                <form method="POST" action="{{ route('logout') }}" style="margin:0">@csrf
-                    <button type="submit" class="btn-outline">Déconnexion</button>
-                </form>
-            @else
-                <a href="{{ route('login') }}" class="btn-outline">Connexion</a>
-                <a href="{{ route('register') }}" class="btn-primary">S'inscrire</a>
-            @endauth
+            <div class="auth-desktop">
+                @auth
+                    <form method="POST" action="{{ route('logout') }}" style="margin:0">@csrf
+                        <button type="submit" class="btn-outline">Déconnexion</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="btn-outline">Connexion</a>
+                    <a href="{{ route('register') }}" class="btn-primary">S'inscrire</a>
+                @endauth
+            </div>
         </div>
     </div>
 </nav>
@@ -211,5 +284,27 @@
     </div>
 </footer>
 @stack('scripts')
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Animation simple pour le bouton hamburger
+            const spans = menuToggle.querySelectorAll('span');
+            menuToggle.classList.toggle('open');
+            if (menuToggle.classList.contains('open')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+</script>
 </body>
 </html>

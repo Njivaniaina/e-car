@@ -15,7 +15,7 @@
         </a>
     </div>
     @else
-    <div style="display:grid;grid-template-columns:1fr 350px;gap:2rem;align-items:start;">
+    <div class="cart-grid">
 
     {{-- Items --}}
     <div>
@@ -91,4 +91,14 @@
     @endif
 </div>
 </div>
+
+<style>
+    .cart-grid { display: grid; grid-template-columns: 1fr 350px; gap: 2rem; align-items: start; }
+    @media(max-width: 900px) {
+        .cart-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .cart-item { flex-direction: column; align-items: flex-start !important; gap: 1rem !important; }
+        .cart-item img { width: 100% !important; height: auto !important; max-height: 200px; }
+        .cart-grid > div:last-child { position: static !important; }
+    }
+</style>
 @endsection

@@ -13,7 +13,7 @@
     <p class="section-subtitle">{{ $voitures->total() }} véhicule{{ $voitures->total() > 1 ? 's' : '' }} disponible{{ $voitures->total() > 1 ? 's' : '' }}</p>
 </div>
 
-<div style="display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;">
+<div class="catalog-grid">
 
 {{-- ── SIDEBAR FILTRES ── --}}
 <aside>
@@ -117,7 +117,7 @@
         <a href="{{ route('voitures.index') }}" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;">Réinitialiser</a>
     </div>
     @else
-    <div class="grid-3" style="grid-template-columns:repeat(3,1fr);">
+    <div class="grid-3" style="width:100%;">
         @foreach($voitures as $voiture)
             @include('partials.voiture-card', ['voiture' => $voiture])
         @endforeach
@@ -147,6 +147,16 @@
 </div>
 
 </div>{{-- /grid --}}
+
+<style>
+    .catalog-grid { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; align-items: start; }
+    @media(max-width: 992px) {
+        .catalog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        aside { order: 2; }
+        .catalog-grid > div { order: 1; }
+        aside form .card { position: static !important; }
+    }
+</style>
 </div>
 </div>
 @endsection
