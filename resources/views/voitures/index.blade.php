@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Catalogue Voitures — E-Mobile')
+@section('title', 'Toutes les Voitures — e-car')
 @section('description', 'Parcourez notre catalogue de voitures neuves et d\'occasion à Madagascar, prix en Ariary.')
 
 @section('content')

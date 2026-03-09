@@ -2,6 +2,17 @@
 
 **e-car** est une plateforme e-commerce moderne spécialisée dans la vente de véhicules (neufs et d'occasion) à Madagascar, avec des prix affichés en **Ariary (Ar)**.
 
+## Accès Administration
+
+Pour accéder à l'interface d'administration et gérer le catalogue :
+
+- **URL** : `/admin`
+- **Email** : `admin@e-car.mg`
+- **Mot de passe** : `password`
+
+> [!NOTE]
+> Ces identifiants sont générés par défaut lors de l'exécution du seeder (`php artisan db:seed`).
+
 ## Fonctionnalités
 
 - **Catalogue complet** : Parcourez une large sélection de voitures filtrables par marque, catégorie et état.

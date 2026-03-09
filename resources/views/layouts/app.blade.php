@@ -202,7 +202,7 @@
                 <div class="footer-title">Contact</div>
                 <ul class="footer-links">
                     <li><a href="#">+261 34 00 000 00</a></li>
-                    <li><a href="#">contact@e-mobile.mg</a></li>
+                    <li><a href="#">contact@e-car.mg</a></li>
                     <li><a href="#">Antananarivo, Madagascar</a></li>
                 </ul>
             </div>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Commande confirmée — E-Mobile')
+@section('title', 'Confirmation de commande — e-car')
 @section('content')
 <div class="section">
 <div class="container" style="max-width:700px;text-align:center;">

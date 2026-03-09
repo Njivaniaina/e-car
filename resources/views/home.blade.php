@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'E-Mobile — Vente de Voitures Madagascar')
+@section('title', 'e-car — Vente de Voitures Madagascar')
 @section('description', 'Trouvez votre voiture idéale en Ariary. Berlines, SUV, Pickups neufs et d\'occasion à Madagascar.')
 
 @section('content')

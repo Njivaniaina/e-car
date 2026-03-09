@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $voiture->titre . ' — E-Mobile')
+@section('title', $voiture->titre . ' — e-car')
 @section('description', 'Achetez ' . $voiture->titre . ' à ' . $voiture->prix_formatte . ' en Ariary à Madagascar.')
 
 @section('content')

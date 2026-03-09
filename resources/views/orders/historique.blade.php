@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Mon Historique — E-Mobile')
+@section('title', 'Mon Historique — e-car')
 @section('content')
 <div class="section">
 <div class="container" style="max-width:980px;">
     <h1 class="section-title">Mon <span class="heading-accent">Historique</span></h1>
-    <p class="section-subtitle">Retrouvez toutes vos commandes passées sur E-Mobile.</p>
+    <p class="section-subtitle">Retrouvez toutes vos commandes passées sur e-car.</p>
 
     @if($orders->isEmpty())
     <div class="card" style="text-align:center; padding:4rem 0;">
