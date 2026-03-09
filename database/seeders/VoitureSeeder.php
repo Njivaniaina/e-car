@@ -28,6 +28,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'berline',
                 'marque'       => 'toyota',
+                'image'        => 'voitures/toyota-corolla-2020.png',
             ],
             [
                 'titre'        => 'Toyota Land Cruiser Prado 2019',
@@ -44,6 +45,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'suv',
                 'marque'       => 'toyota',
+                'image'        => 'voitures/toyota-prado-2019.png',
             ],
             [
                 'titre'        => 'Mitsubishi L200 Pickup 2021',
@@ -60,6 +62,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'pickup',
                 'marque'       => 'mitsubishi',
+                'image'        => 'voitures/mitsubishi-l200-2021.png',
             ],
             [
                 'titre'        => 'Renault Clio 5 2022',
@@ -76,6 +79,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'citadine',
                 'marque'       => 'renault',
+                'image'        => 'voitures/renault-clio-2022.png',
             ],
             [
                 'titre'        => 'BMW X5 2020',
@@ -92,6 +96,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'suv',
                 'marque'       => 'bmw',
+                'image'        => 'voitures/bmw-x5-2020.png',
             ],
             [
                 'titre'        => 'Toyota Hilux 2023',
@@ -108,6 +113,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'pickup',
                 'marque'       => 'toyota',
+                'image'        => 'voitures/toyota-hilux-2023.png',
             ],
             [
                 'titre'        => 'Mercedes-Benz C220 2021',
@@ -124,6 +130,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'berline',
                 'marque'       => 'mercedes',
+                'image'        => 'voitures/mercedes-c220-2021.png',
             ],
             [
                 'titre'        => 'Hyundai Tucson 2022',
@@ -140,6 +147,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'suv',
                 'marque'       => 'hyundai',
+                'image'        => 'voitures/hyundai-tucson-2022.png',
             ],
             [
                 'titre'        => 'Isuzu D-Max 2020',
@@ -156,6 +164,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'pickup',
                 'marque'       => 'isuzu',
+                'image'        => 'voitures/isuzu-dmax-2020.png',
             ],
             [
                 'titre'        => 'Peugeot 208 2023',
@@ -172,6 +181,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'citadine',
                 'marque'       => 'peugeot',
+                'image'        => 'voitures/peugeot-208-2023.png',
             ],
             [
                 'titre'        => 'Toyota Avanza 2021',
@@ -188,6 +198,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => false,
                 'category'     => 'monospace',
                 'marque'       => 'toyota',
+                'image'        => 'voitures/toyota-avanza-2021.png',
             ],
             [
                 'titre'        => 'Nissan Navara 2022',
@@ -204,6 +215,7 @@ class VoitureSeeder extends Seeder
                 'is_featured'  => true,
                 'category'     => 'pickup',
                 'marque'       => 'nissan',
+                'image'        => 'voitures/nissan-navara-2022.png',
             ],
         ];
 
@@ -233,7 +245,7 @@ class VoitureSeeder extends Seeder
                 'puissance_cv' => $data['puissance_cv'],
                 'is_featured'  => $data['is_featured'],
                 'is_active'    => true,
-                'images'       => null,
+                'images'       => isset($data['image']) ? [$data['image']] : null,
                 'category_id'  => $category->id,
                 'marque_id'    => $marque->id,
             ]);
