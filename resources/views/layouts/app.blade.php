@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', 'e-car') — Vente de Voitures à Madagascar</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <meta name="description" content="@yield('description', 'Trouvez votre voiture idéale en Ariary. Large choix de berlines, SUV, pickups, citadines neuves et d\'occasion.')"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,6 +191,9 @@
         .stat-card { background: var(--bg-card); border: 1px solid var(--bg-border); border-radius: var(--radius); padding: 1.5rem; }
         .stat-card-value { font-size: 2rem; font-weight: 900; }
         .stat-card-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.4px; }
+        
+        .grid-admin-custom { display: grid; grid-template-columns: 350px 1fr; gap: 2.5rem; align-items: start; }
+        @media(max-width:900px){ .grid-admin-custom { grid-template-columns: 1fr; gap: 1.5rem; } }
     </style>
     @stack('styles')
 </head>

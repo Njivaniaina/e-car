@@ -11,7 +11,7 @@
     <form method="POST" action="{{ route('admin.voitures.update', $voiture) }}" enctype="multipart/form-data" class="card">
         @csrf
         @method('PUT')
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div class="grid-2">
             {{-- Infos de base --}}
             <div class="form-group">
                 <label class="form-label">Titre de l'annonce *</label>
